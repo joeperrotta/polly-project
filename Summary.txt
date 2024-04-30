@@ -3,12 +3,14 @@ In this project, we leveraged the Home Mortgage Disclosure Act (HMDA) dataset to
 Data Preprocessing and Feature Engineering:
 
 Handling Missing Values: We filled missing values in numerical features like applicant income and loan amount with the median to maintain the integrity of their distributions. For categorical features, missing values were imputed with 'Missing' to prevent data loss.
+
 Categorization and Encoding: We categorized continuous numerical features into three bins (low, medium, high) using QuantileDiscretizer to simplify their effects. Categorical variables were transformed using StringIndexer followed by OneHotEncoder to make them suitable for modeling. Encoded versions of the fields were provided but I just encoded them here for simplicity.
 Model Development and Insights: We deployed three different predictive models:
 
 Logistic Regression
 Random Forest Classifier
 Gradient Boosting Trees
+
 These models were trained and assessed using metrics like ROC-AUC, accuracy, F1 score, precision, and recall, with the Random Forest model demonstrating superior performance across most metrics.
 
 Key Insights:
@@ -18,3 +20,9 @@ We looked at loan applications and approvals from 2007-2017 by loan type.
 Feature importance analysis revealed that race, loan amount, and applicant income are critical predictors, emphasizing the financial aspects in loan approval decisions.
 The categorization of numerical data helped in enhancing the interpretability of models and dealing with outliers effectively.
 This analysis not only aids in identifying likely successful loan applications, enhancing operational efficiency, but also sheds light on significant factors influencing loan approvals.
+
+Additional Steps:
+
+Additional Data cleaning and binning of data
+More advanced feature engineering (socioeconomic, financial, and market scores)
+Productionize code and expand commenting
